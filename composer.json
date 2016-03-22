@@ -46,5 +46,22 @@
     },
     "config": {
         "preferred-install": "dist"
+    },
+    "extra": {
+        "heroku": {
+            "document-root": "web",
+            "index-document": "index.php",
+            "php-config": [
+                "short_open_tag=on",
+                "date.timezone=Europe/Amsterdam"
+            ],
+            "engines": {
+                "php": "5.5.*",
+                "nginx": "1.4.*"
+            },
+            "compile": [
+                "echo $FOO"
+            ]
+        }
     }
 }
